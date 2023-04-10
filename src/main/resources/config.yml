@@ -1,7 +1,7 @@
 
 # CyberDeaths Configuration
 
-# If true, players will be shown the coordinates and world name of they died
+# If true, players will be shown their last coordinates and world name when they die
 send_death_location: true
 
 # World name aliases to show in the death point message
