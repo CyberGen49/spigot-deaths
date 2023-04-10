@@ -21,7 +21,7 @@ messages:
   reloaded: "&aConfig reloaded!"
   died_at_coords: "&fYou died at &b%0, %1, %2&f in &7%3"
   # Death messages
-  # &r will be prepended and appended to all display names
+  # &r will be added to the end of all display names
   # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
   deaths:
     block_explosion: "%0 blew up!"
@@ -37,11 +37,11 @@ messages:
     entity_attack: "%0 was slain by %1!"
     entity_attack_guardian: "%0 was zapped by %1!"
     entity_attack_elder_guardian: "%0 was zapped by %1!"
-    entity_attack_weapon: "%0 was slain by %1 using %2!"
+    entity_attack_weapon: "%0 was slain by %1 using &b%2!"
     entity_explosion: "%0 was blown up by %1!"
     entity_explosion_ghast: "%0 was fireballed by %1!"
     entity_sweep_attack: "%0 was swept away by %1!"
-    entity_sweep_attack_weapon: "%0 was swept away by %1 using %2!"
+    entity_sweep_attack_weapon: "%0 was swept away by %1 using &b%2!"
     fall: "%0 took too big of a fall!"
     falling_block: "%0 was crushed by a falling block!"
     falling_block_anvil: "%0 was squashed by a falling anvil!"
@@ -61,23 +61,23 @@ messages:
     projectile_entity: "%0 was shot by %1!"
     projectile_entity_blaze: "%0 was fireballed by %1!"
     projectile_entity_ghast: "%0 was fireballed by %1!"
-    projectile_entity_weapon: "%0 was shot by %1 using %2!"
+    projectile_entity_weapon: "%0 was shot by %1 using &b%2!"
     projectile_entity_snowball: "%0 was pummeled %1!"
     projectile_entity_egg: "%0 was egged %1!"
     sonic_boom: "%0 took the Warden's sonic boom head on!"
     starvation: "%0 starved!"
     suffocation: "%0 suffocated in a block!"
     suicide: "%0 committed suicide!"
-    suicide_weapon: "%0 committed suicide using %1!"
+    suicide_weapon: "%0 committed suicide using &b%1!"
     thorns: "%0 was pricked to death by %1!"
     void: "%0 fell in the void!"
     wither: "%0 withered away!"
   death_default: "%0 died!"
-  death_prefix: "&cDeath &8>"
+  death_prefix: "&cDeath &8>&r "
 
 # Entity names
 # For entities not listed here, their default names will be used
-# Non-"living" entities have been excluded from this list
+# Entities that could never show up in a death message have been excluded
 # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
 entity_names:
   allay: "Allay"

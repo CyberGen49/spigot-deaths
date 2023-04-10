@@ -182,9 +182,9 @@ public class Plugin extends JavaPlugin implements Listener {
                 String configuredMobName = config.getString("entity_names." + damager.getType().toString().toLowerCase());
                 String mobCustomName = damager.getCustomName();
                 if (useMobDisplaynames && mobCustomName != null) {
-                    mobName = "&r" + mobCustomName + "&r";
+                    mobName = mobCustomName + "&r";
                 } else if (configuredMobName != null) {
-                    mobName = "&r" + configuredMobName + "&r";
+                    mobName = configuredMobName + "&r";
                 }
                 msgArgs[1] = mobName;
             }
@@ -196,7 +196,7 @@ public class Plugin extends JavaPlugin implements Listener {
                     if (!itemCustomName.equals("")) {
                         String newCause = causeString + "_weapon";
                         if (getDeathMessageType(newCause) != null) {
-                            msgArgs[(causeString == "suicide") ? 1 : 2] = "&r&b" + itemCustomName + "&r";
+                            msgArgs[(causeString == "suicide") ? 1 : 2] = itemCustomName + "&r";
                             causeString = newCause;
                         }
                     }
@@ -225,7 +225,7 @@ public class Plugin extends JavaPlugin implements Listener {
             msg = config.getString("messages.death_default");
             utils.log("warning", "Using fallback death message");
         }
-        event.setDeathMessage(Utils.translateColors(config.getString("messages.death_prefix") + "&r " + Utils.strFill(msg, msgArgs)));
+        event.setDeathMessage(Utils.translateColors(config.getString("messages.death_prefix") + Utils.strFill(msg, msgArgs)));
     }
 
     @Override public void onEnable() {
