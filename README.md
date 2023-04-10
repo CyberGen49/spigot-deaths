@@ -1,5 +1,5 @@
 # CyberDeathMessages
-A spigot plugin that overrides the default death messages with super customizable ones!
+A Spigot plugin that overrides the default death messages with super customizable ones!
 
 ## Commands
 
