@@ -1,0 +1,14 @@
+main: org.simplecyber.deaths.Plugin
+name: CyberDeathMessages
+api-version: 1.19
+version: 1.0.0
+description: Override the default death messages and tell players their coordinates on death.
+commands:
+  cyberdeaths:
+    aliases: ['deaths', 'cdm']
+    usage: /cyberdeaths [reload]
+    description: Manage CyberDeaths.
+    permission: cyberdeaths.info
+permissions:
+  cyberdeaths.info:
+    default: true
