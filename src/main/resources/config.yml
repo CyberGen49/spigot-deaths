@@ -73,7 +73,7 @@ messages:
     void: "%0 fell in the void!"
     wither: "%0 withered away!"
   death_default: "%0 died!"
-  death_prefix: "&cDeath &8>&r "
+  death_prefix: "&cDeath &8>&f "
 
 # Entity names
 # For entities not listed here, their default names will be used
