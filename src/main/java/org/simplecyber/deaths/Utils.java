@@ -16,10 +16,19 @@ public class Utils {
 
     private final JavaPlugin plugin;
 
+    /**
+     * Construct utils in the context of a plugin
+     * @param plugin The plugin to use
+     */
     public Utils(JavaPlugin plugin) {
         this.plugin = plugin;
     }
 
+    /**
+     * Translate &-style color codes in a string to internal ones
+     * @param text The source string
+     * @return The translated string
+     */
     public static String translateColors(String text) {
         text = ChatColor.translateAlternateColorCodes('&', text);
         final char COLOR_CHAR = ChatColor.COLOR_CHAR;
@@ -36,12 +45,24 @@ public class Utils {
         }
         return matcher.appendTail(buffer).toString();
     }
+
+    /**
+     * Fill in placeholders in a string with values
+     * @param text The string to fill
+     * @param replacements Any replacements to make
+     * @return The filled string
+     */
     public static String strFill(String text, Object... replacements) {
         for (int i = 0; i < replacements.length; i++) {
             text = text.replace((CharSequence) ("%"+i), (CharSequence) String.valueOf(replacements[i]));
         }
         return text;
     }
+    /**
+     * Sanitize and format an entity ID to look grammatically correct
+     * @param id The ID to format
+     * @return The formatted version
+     */
     public static String idToDisplayName(String id) {
         String[] parts = id.split("_");
         StringBuilder builder = new StringBuilder();
@@ -52,6 +73,12 @@ public class Utils {
         }
         return builder.toString().trim();
     }
+    /**
+     * Send a message to a target with optional string replacements (via `strFill()`)
+     * @param target The target
+     * @param text The string to send
+     * @param replacements Additional replacements
+     */
     public void sendMsg(Object target, String text, Object... replacements) {
         text = strFill(text, replacements);
         text = translateColors(text);
@@ -66,6 +93,11 @@ public class Utils {
             return;
         }
     }
+    /**
+     * Log to the console with a type
+     * @param type The log type
+     * @param text The log message
+     */
     public void log(String type, String text) {
         Level level;
         switch (type) {
@@ -81,6 +113,10 @@ public class Utils {
         }
         plugin.getLogger().log(level, text);
     }
+    /**
+     * Log INFO to the console
+     * @param text The log message
+     */
     public void log(String text) {
         log("info", text);
     }
